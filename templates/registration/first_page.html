@@ -2,15 +2,67 @@
 
 {% if user.is_authenticated %}
 
-    <p> Hola {{user.username}}</p>
-    <a href="{% url 'post_list' %}">Black Table</a>
-
 {% else %}
-    
-    <p>Si no tienes una cuenta Registrate</p>
-    <a href="{% url 'signup' %}">Signup</a>
-    <br>
-    <p>Si ya tienes cuenta puedes ingresar</p>
-    <a href="{% url 'login' %}">Login</a>
+<html>
 
+
+<head>
+    <p>{{user.username}}</p>
+    <a href="{% url 'post_list' %}"></a>
+    <h1>Bienvenido de nuevo</h1>
+</head>
+
+<body>
+
+<style class="Estilo">
+body {
+    background-color: rgb(11, 61, 63);
+    text-align: center;
+    font-family: sans-serif;
+}
+
+h1 {
+    color: #fff;
+    text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+}
+
+.Sign p {
+    color: #fff;
+    font-family: sans-serif;
+}
+
+.Login p {
+    color: #fff;
+    font-family: sans-serif;
+}
+
+.Sign a {
+    color: #fff;
+}
+
+
+    
+</style>
+
+<div class="Sign">
+    <p>Si no tienes una cuenta Registrate</p>
+
+    <a href="{% url 'signup' %}">Sign Up</a>
+
+</div>
+<br>
+<div class="Login">
+    <p>Si ya tienes cuenta puedes ingresar</p>
+    <a href="{% url 'login' %}">Log In</a>
+</div>
+</body>
+
+
+
+
+
+
+
+
+</html>
 {% endif %}
