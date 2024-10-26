@@ -1,11 +1,12 @@
 {% extends "_base.html" %}
 
 {% block content %}
+
     <h2>{{ post.title }}</h2>
     <p>Author: {{ post.author }}</p>
     <p>{{ post.body }}</p>
 
-    <a href="{% url 'post_update' post.pk %}">Actualizar</a>
-    <a href="{% url 'post_delete' post.pk %}">Borrar</a>
+    <button class="btn_update"><a href="{% url 'post_update' post.pk %}">Editar</a></button>
+    <button class="btn_delete"><a href="{% url 'post_delete' post.pk %}">Borrar</a></button>
 
 {% endblock content %}
